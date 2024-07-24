@@ -1,0 +1,696 @@
+{
+	"info": {
+		"_postman_id": "7ffad65f-abcd-47f3-85d9-e7cd0b739afb",
+		"name": "Prueba_Tecnica",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21889315"
+	},
+	"item": [
+		{
+			"name": "TransactionMs",
+			"item": [
+				{
+					"name": "Movement Controller",
+					"item": [
+						{
+							"name": "Consultar Movimiento a Cuenta",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": []
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followRedirects": true,
+								"disableUrlEncoding": false,
+								"disableCookies": false
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "User-Agent",
+										"value": "insomnia/9.3.2"
+									}
+								],
+								"url": {
+									"raw": "http://{{ _.host }}:{{ _.portTransaccion }}/api/v1/movimientos/reportes?code=48&initDate=07/10/2024&endDate=07/10/2024",
+									"protocol": "http",
+									"host": [
+										"{{ _.host }}"
+									],
+									"port": "{{ _.portTransaccion }}",
+									"path": [
+										"api",
+										"v1",
+										"movimientos",
+										"reportes"
+									],
+									"query": [
+										{
+											"key": "code",
+											"value": "48"
+										},
+										{
+											"key": "initDate",
+											"value": "07/10/2024"
+										},
+										{
+											"key": "endDate",
+											"value": "07/10/2024"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Crear Movimiento a cuenta de cliente",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": []
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followRedirects": true,
+								"disableUrlEncoding": false,
+								"disableCookies": false
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "User-Agent",
+										"value": "insomnia/9.3.2"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"codeClient\": 48,\n  \"account\": \"000000000105\",\n  \"value\": 50.00,\n  \"type\": \"PGLZ\"\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{ _.host }}:{{ _.portTransaccion }}/api/v1/movimientos?code=48",
+									"protocol": "http",
+									"host": [
+										"{{ _.host }}"
+									],
+									"port": "{{ _.portTransaccion }}",
+									"path": [
+										"api",
+										"v1",
+										"movimientos"
+									],
+									"query": [
+										{
+											"key": "code",
+											"value": "48"
+										}
+									]
+								},
+								"description": "Este endpoint crea una cuenta de ahorros por defecto"
+							},
+							"response": []
+						},
+						{
+							"name": "Eliminar Movimiento",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": []
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followRedirects": true,
+								"disableUrlEncoding": false,
+								"disableCookies": false
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "User-Agent",
+										"value": "insomnia/9.3.2"
+									}
+								],
+								"url": {
+									"raw": "http://{{ _.host }}:{{ _.portTransaccion }}/api/v1/movimientos?sequence=4",
+									"protocol": "http",
+									"host": [
+										"{{ _.host }}"
+									],
+									"port": "{{ _.portTransaccion }}",
+									"path": [
+										"api",
+										"v1",
+										"movimientos"
+									],
+									"query": [
+										{
+											"key": "sequence",
+											"value": "4"
+										}
+									]
+								},
+								"description": "Este endpoint crea una cuenta de ahorros por defecto"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Account Controller",
+					"item": [
+						{
+							"name": "Consultar Cuenta",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": []
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followRedirects": true,
+								"disableUrlEncoding": false,
+								"disableCookies": false
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "User-Agent",
+										"value": "insomnia/9.3.2"
+									}
+								],
+								"url": {
+									"raw": "http://{{ _.host }}:{{ _.portTransaccion }}/api/v1/cuentas?code=48",
+									"protocol": "http",
+									"host": [
+										"{{ _.host }}"
+									],
+									"port": "{{ _.portTransaccion }}",
+									"path": [
+										"api",
+										"v1",
+										"cuentas"
+									],
+									"query": [
+										{
+											"key": "code",
+											"value": "48"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Crear Cuenta a cliente",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": []
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followRedirects": true,
+								"disableUrlEncoding": false,
+								"disableCookies": false
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "User-Agent",
+										"value": "insomnia/9.3.2"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"type\": \"CTE\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{ _.host }}:{{ _.portTransaccion }}/api/v1/cuentas?code=48",
+									"protocol": "http",
+									"host": [
+										"{{ _.host }}"
+									],
+									"port": "{{ _.portTransaccion }}",
+									"path": [
+										"api",
+										"v1",
+										"cuentas"
+									],
+									"query": [
+										{
+											"key": "code",
+											"value": "48"
+										}
+									]
+								},
+								"description": "Este endpoint crea una cuenta de ahorros por defecto"
+							},
+							"response": []
+						},
+						{
+							"name": "Actualizar Cuenta a cliente",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": []
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followRedirects": true,
+								"disableUrlEncoding": false,
+								"disableCookies": false
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "User-Agent",
+										"value": "insomnia/9.3.2"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"availableBalance\": 0,\n  \"status\": \"A\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{ _.host }}:{{ _.portTransaccion }}/api/v1/cuentas?code=48&account=000000000105",
+									"protocol": "http",
+									"host": [
+										"{{ _.host }}"
+									],
+									"port": "{{ _.portTransaccion }}",
+									"path": [
+										"api",
+										"v1",
+										"cuentas"
+									],
+									"query": [
+										{
+											"key": "code",
+											"value": "48"
+										},
+										{
+											"key": "account",
+											"value": "000000000105"
+										}
+									]
+								},
+								"description": "Este endpoint crea una cuenta de ahorros por defecto"
+							},
+							"response": []
+						},
+						{
+							"name": "Eliminar Cuenta a cliente",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": []
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followRedirects": true,
+								"disableUrlEncoding": false,
+								"disableCookies": false
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "User-Agent",
+										"value": "insomnia/9.3.2"
+									}
+								],
+								"url": {
+									"raw": "http://{{ _.host }}:{{ _.portTransaccion }}/api/v1/cuentas?code=48&account=000000000105",
+									"protocol": "http",
+									"host": [
+										"{{ _.host }}"
+									],
+									"port": "{{ _.portTransaccion }}",
+									"path": [
+										"api",
+										"v1",
+										"cuentas"
+									],
+									"query": [
+										{
+											"key": "code",
+											"value": "48"
+										},
+										{
+											"key": "account",
+											"value": "000000000105"
+										}
+									]
+								},
+								"description": "Este endpoint crea una cuenta de ahorros por defecto"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "EntidadMs",
+			"item": [
+				{
+					"name": "Consultar Clientes",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": []
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": true,
+						"disableUrlEncoding": false,
+						"disableCookies": false
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "User-Agent",
+								"value": "insomnia/9.3.2"
+							}
+						],
+						"url": {
+							"raw": "http://{{ _.host }}:{{ _.portEntidad }}/api/v1/clientes?lastPosition=0",
+							"protocol": "http",
+							"host": [
+								"{{ _.host }}"
+							],
+							"port": "{{ _.portEntidad }}",
+							"path": [
+								"api",
+								"v1",
+								"clientes"
+							],
+							"query": [
+								{
+									"key": "lastPosition",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar Clientes Especifico",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": []
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": true,
+						"disableUrlEncoding": false,
+						"disableCookies": false
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "User-Agent",
+								"value": "insomnia/9.3.2"
+							}
+						],
+						"url": {
+							"raw": "http://{{ _.host }}:{{ _.portEntidad }}/api/v1/clientes?lastPosition=0&dni=0931850358",
+							"protocol": "http",
+							"host": [
+								"{{ _.host }}"
+							],
+							"port": "{{ _.portEntidad }}",
+							"path": [
+								"api",
+								"v1",
+								"clientes"
+							],
+							"query": [
+								{
+									"key": "lastPosition",
+									"value": "0"
+								},
+								{
+									"key": "dni",
+									"value": "0931850358"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Cliente",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": []
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": true,
+						"disableUrlEncoding": false,
+						"disableCookies": false
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "User-Agent",
+								"value": "insomnia/9.3.2"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"dni\": \"1706768262\",\n  \"name\": \"Segundo Galo\",\n  \"lastName\": \"Quimbita\",\n  \"gender\": \"M\",\n  \"age\": 62,\n  \"address\": \"El beaterio\",\n  \"phone\": \"0993870657\",\n  \"password\": \"12345678\",\n  \"slastName\": \"Quimbita\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{ _.host }}:{{ _.portEntidad }}/api/v1/clientes",
+							"protocol": "http",
+							"host": [
+								"{{ _.host }}"
+							],
+							"port": "{{ _.portEntidad }}",
+							"path": [
+								"api",
+								"v1",
+								"clientes"
+							]
+						},
+						"description": "Este endpoint crea una cuenta de ahorros por defecto"
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Cliente",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": []
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": true,
+						"disableUrlEncoding": false,
+						"disableCookies": false
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "User-Agent",
+								"value": "insomnia/9.3.2"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Daysi Carolina\",\n  \"lastName\": \"Quimbita\",\n  \"gender\": \"F\",\n  \"age\": 28,\n  \"address\": \"El beaterio\",\n  \"phone\": \"0986655125\",\n  \"password\": \"ElMaster21\",\n\t\"state\": \"V\",\n  \"slastName\": \"Yupangui\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{ _.host }}:{{ _.portEntidad }}/api/v1/clientes?dni=1726217977",
+							"protocol": "http",
+							"host": [
+								"{{ _.host }}"
+							],
+							"port": "{{ _.portEntidad }}",
+							"path": [
+								"api",
+								"v1",
+								"clientes"
+							],
+							"query": [
+								{
+									"key": "dni",
+									"value": "1726217977"
+								}
+							]
+						},
+						"description": "Este endpoint crea una cuenta de ahorros por defecto"
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Cliente",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": []
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": true,
+						"disableUrlEncoding": false,
+						"disableCookies": false
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "User-Agent",
+								"value": "insomnia/9.3.2"
+							}
+						],
+						"url": {
+							"raw": "http://{{ _.host }}:{{ _.portEntidad }}/api/v1/clientes?dni=1726217977",
+							"protocol": "http",
+							"host": [
+								"{{ _.host }}"
+							],
+							"port": "{{ _.portEntidad }}",
+							"path": [
+								"api",
+								"v1",
+								"clientes"
+							],
+							"query": [
+								{
+									"key": "dni",
+									"value": "1726217977"
+								}
+							]
+						},
+						"description": "Este endpoint crea una cuenta de ahorros por defecto"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "localhost"
+		},
+		{
+			"key": "portEntidad",
+			"value": "8080"
+		},
+		{
+			"key": "portTransaccion",
+			"value": "8180"
+		}
+	]
+}
